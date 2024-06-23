@@ -143,11 +143,11 @@ const Login = () => {
             Enter your email address and password to access your account.
           </small>
           <div className="inputWrapper flex w-full flex-col relative pt-4">
-            <span className="relative">
+            <span className="relative text-black">
               Email Address <small className="text-lg text-[#FF0000]">*</small>
             </span>
             <input
-              className="border hover:border-2 border-gray-300 outline-none rounded-md p-2 my-1"
+              className="text-black border hover:border-2 border-gray-300 outline-none rounded-md p-2 my-1"
               type="email"
               placeholder="Enter your email"
               value={email}
@@ -158,12 +158,12 @@ const Login = () => {
             )}
           </div>
           <div className="inputWrapper flex w-full flex-col relative pt-4">
-            <span className="relative">
+            <span className="relative text-black">
               Password <small className="text-lg text-[#FF0000]">*</small>
             </span>
             <div className="input-line flex w-full h-10 border-gray-300 border hover:border-2 rounded-md overflow-hidden">
               <input
-                className="outline-none w-full h-full px-2"
+                className="outline-none w-full h-full px-2 text-black"
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter your password"
                 value={password}
@@ -191,7 +191,10 @@ const Login = () => {
           </div>
           <div className="w-full mt-1 flex justify-between">
             <div className="flex items-center">
-              <input type="checkbox" className="my-auto mr-2 w-4 h-4" />{" "}
+              <input
+                type="checkbox"
+                className="text-black  my-auto mr-2 w-4 h-4"
+              />{" "}
               Remember me
             </div>
             <Link href="#" className="text-[#622081]">
