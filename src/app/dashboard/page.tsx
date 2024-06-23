@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import PrivateRoute from "../component/PrivateRoute";
@@ -8,17 +6,12 @@ import Logout from "../component/Logout";
 const DashboardPage = () => {
   const router = useRouter();
 
-  const getToken = () => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("accessToken");
-    }
-    return null;
-  };
-
   useEffect(() => {
-    const token = getToken();
-    if (!token) {
-      router.push("/login");
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("accessToken");
+      if (!token) {
+        router.push("/login");
+      }
     }
   }, [router]);
 
