@@ -190,11 +190,8 @@ const Login = () => {
             )}
           </div>
           <div className="w-full mt-1 flex justify-between">
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                className="text-black  my-auto mr-2 w-4 h-4"
-              />{" "}
+            <div className="flex items-center text-black">
+              <input type="checkbox" className="  my-auto mr-2 w-4 h-4" />{" "}
               Remember me
             </div>
             <Link href="#" className="text-[#622081]">
