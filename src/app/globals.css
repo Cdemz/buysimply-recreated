@@ -31,3 +31,16 @@ body {
     text-wrap: balance;
   }
 }
+
+.slider {
+  animation: animate-gradient 1.3s ease-out 0s infinite;
+}
+
+@keyframes animate-gradient {
+  0% {
+    left: calc(-20% - 128px);
+  }
+  100% {
+    left: calc(120% + 128px);
+  }
+}
