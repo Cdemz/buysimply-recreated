@@ -8,10 +8,13 @@ const DashboardPage = dynamic(() => import("./dash"), {
 
 const Dashboard = () => {
   return (
-    <PrivateRoute>
+    <div className="">
+      {/*  <PrivateRoute> */}
+
       <Logout />
       <DashboardPage />
-    </PrivateRoute>
+      {/*  </PrivateRoute>  */}
+    </div>
   );
 };
 
