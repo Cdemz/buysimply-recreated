@@ -12,11 +12,13 @@ const DashboardPage = () => {
   };
 
   useEffect(() => {
-    const token = getToken();
-    if (!token) {
-      router.push("/login");
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("accessToken");
+      if (!token) {
+        router.push("/login");
+      }
     }
-  }, []);
+  }, [router]);
 
   return (
     <PrivateRoute>
