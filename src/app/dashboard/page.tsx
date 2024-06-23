@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import PrivateRoute from "../component/PrivateRoute";
@@ -8,15 +9,16 @@ const DashboardPage = () => {
   const router = useRouter();
 
   const getToken = () => {
-    return localStorage.getItem("accessToken");
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("accessToken");
+    }
+    return null;
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("accessToken");
-      if (!token) {
-        router.push("/login");
-      }
+    const token = getToken();
+    if (!token) {
+      router.push("/login");
     }
   }, [router]);
 
@@ -24,7 +26,6 @@ const DashboardPage = () => {
     <PrivateRoute>
       <Logout />
       <div className="min-h-screen bg-white">
-        .
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white animate-gradient"></div>
           <div className="py-6 bg-white shadow-md">
